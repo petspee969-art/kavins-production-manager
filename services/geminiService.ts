@@ -1,7 +1,7 @@
-
 import { GoogleGenAI } from "@google/genai";
 import { ProductionOrder, Seamstress } from "../types";
 
+// The API Key is injected by vite.config.ts from the environment variable API_KEY
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const generateProductionInsights = async (
@@ -16,7 +16,7 @@ export const generateProductionInsights = async (
         fabric: o.fabric,
         totalItems: o.items.length,
         cuttingStock: o.activeCuttingItems.reduce((acc, i) => acc + i.actualPieces, 0),
-        distributions: o.splits.map(s => ({
+        distributions: (o.splits || []).map(s => ({
             seamstress: s.seamstressName,
             status: s.status,
             pieces: s.items.reduce((acc, i) => acc + i.actualPieces, 0)
@@ -48,6 +48,6 @@ export const generateProductionInsights = async (
     return response.text || "Não foi possível gerar a análise no momento.";
   } catch (error) {
     console.error("Erro ao gerar insights:", error);
-    return "Erro ao conectar com a IA da Kavin's. Verifique sua chave de API.";
+    return "Erro ao conectar com a IA da Kavin's. Verifique sua chave de API nas configurações da Vercel.";
   }
 };
