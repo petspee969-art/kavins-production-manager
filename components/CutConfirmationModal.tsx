@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { X, Scissors, ArrowRight, Check } from 'lucide-react';
 import { ProductionOrder, ProductionOrderItem } from '../types';

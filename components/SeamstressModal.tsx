@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { X, Save, User, MapPin, Phone, Scissors } from 'lucide-react';
 import { Seamstress } from '../types';

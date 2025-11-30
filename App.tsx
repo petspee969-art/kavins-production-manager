@@ -37,8 +37,6 @@ import {
   CartesianGrid, 
   Tooltip, 
   ResponsiveContainer,
-  LineChart,
-  Line,
   AreaChart,
   Area
 } from 'recharts';
@@ -1224,7 +1222,7 @@ export default function App() {
                         <td className="p-4">{ref.defaultFabric}</td>
                         <td className="p-4">
                            <span className="px-2 py-1 bg-slate-100 rounded text-xs">
-                             {ref.defaultGrid === 'STANDARD' ? 'Padrão (P-GG)' : ref.defaultGrid === 'PLUS' ? 'Plus (G1-G3)' : 'Personalizada'}
+                             {ref.defaultGrid === 'STANDARD' ? 'Padrão (P-GG)' : ref.defaultGrid === 'PLUS' ? 'Plus (G1-G3)' : 'Personalizado'}
                            </span>
                         </td>
                         <td className="p-4">
